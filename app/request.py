@@ -5,11 +5,11 @@ from .models import news
 News = news.News
 
 # Getting api key
-api_key = app.config['MOVIE_API_KEY']
+#api_key = app.config['MOVIE_API_KEY']
 
 # Getting the movie base url
-base_url = app.config["MOVIE_API_BASE_URL"]
-
+#base_url = app.config["MOVIE_API_BASE_URL"]
+base_url = 'https://newsapi.org/v2/sources?apiKey=0f91a1188bde4ec2a617cbda88fc63d1'
 
 def get_news():
     '''
