@@ -9,7 +9,12 @@
         {% endif %}
     </head>
     <body>
-        <h1> Hello World  from index file</h1>
+        <h1> The news summary</h1>
+        <p>--------------</p>
+        {% for news in online_news %}
+        <li>{{ news.description }}</li>
+        {% endfor %}
+        <p>------------</p>
     </body>
 </html>
 

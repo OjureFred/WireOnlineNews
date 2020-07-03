@@ -11,8 +11,9 @@ def index():
 
     #Getting news item
     online_news = get_news()
+    print(online_news)
     title = "Welcome to Wire Online News Service"
-    return render_template('index.html', title = title)
+    return render_template('index.html', title = title, online_news= online_news)
 
 @app.route('/news/<news_id>')
 def news(news_id):

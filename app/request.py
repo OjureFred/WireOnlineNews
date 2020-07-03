@@ -23,8 +23,8 @@ def get_news():
 
         news_results = None
 
-        if get_news_response['results']:
-            news_results_list = get_news_response['results']
+        if get_news_response['sources']:
+            news_results_list = get_news_response['sources']
             news_results = process_results(news_results_list)
 
     return news_results
@@ -49,7 +49,7 @@ def process_results(news_list):
         language = news_item.get('language')
         country = news_item.get('country')
 
-        news_object = News(id,name,description,url,categorye,language, country)
+        news_object = News(id,name,description,url,category,language, country)
         news_results.append(news_object)
 
     return news_results
