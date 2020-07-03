@@ -46,7 +46,7 @@ Give an example
 
 ### And coding style tests
 
-No cosing style tests are applied
+No coding style tests are applied
 
 
 ## Deployment
