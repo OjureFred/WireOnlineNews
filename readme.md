@@ -34,7 +34,7 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Model class each have a unit test class. You can run these using the python command. E.g python3.8 news.py
 
 ### Break down into end to end tests
 
@@ -46,21 +46,23 @@ Give an example
 
 ### And coding style tests
 
-Explain what these tests test and why
+No cosing style tests are applied
 
-```
-Give an example
-```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+To deploy, follow these steps:
+
+1. Clone from the repository to your local drive.
+2. Install Flask. You can follow the steps in https://timmyreilly.azurewebsites.net/python-flask-windows-development-environment-setup/
+3. Activate Flask environmet
+4. Install Twitter Bootstrap, Google Fonts, Coolers 
 
 ## Built With
 
--  [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
--  [Maven](https://maven.apache.org/) - Dependency Management
--  [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+-  [Python](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+-  [Bootstrap](https://maven.apache.org/) - Dependency Management
+-  [Google Fonts](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contributing
 
@@ -68,11 +70,11 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+We use Github for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
--  **Billie Thompson** - _Initial work_ - [PurpleBooth](https://github.com/PurpleBooth)
+-  **Fredrick Ojure** - _Initial work__
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
@@ -82,6 +84,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
--  Hat tip to anyone whose code was used
--  Inspiration
--  etc
+-  Samora Yommie
+-  Sylvia Mbugua
+-  Francis Kipchumba
+
+All Technical Mentors at Moringa School
