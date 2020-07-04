@@ -11,11 +11,11 @@ News = news.News
 #base_url = app.config["MOVIE_API_BASE_URL"]
 base_url = 'https://newsapi.org/v2/sources?apiKey=0f91a1188bde4ec2a617cbda88fc63d1'
 
-def get_news():
+def get_news(category):
     '''
     Function that gets the json response to our url request
     '''
-    get_news_url = base_url.format()
+    get_news_url = base_url.format(category)
 
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
