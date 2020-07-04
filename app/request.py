@@ -29,6 +29,30 @@ def get_news(category):
 
     return news_results
 
+def get_news_item(id):
+    '''
+    Funtion to retrieve a single news item
+    '''
+    get_news_details_url = base_url.format(id)
+
+    with urllib.request.urlopen(get_news_details_url) as url:
+        news_details_data = url.read()
+        news_details_response = json.loads(news_details_data)
+
+        news_object = None
+        if news_details_response:
+            id = news_details_response.get('id')
+            name = news_details_response.get('name')
+            desription = news_details_response.get('description')
+            url = news_details_response.get('url')
+            category = news_details_response.get('category')
+            language = news_details_response.get('language')
+            country = news_details_response.get('country')
+
+            news_object = Movie(id,name,description,url,category,language, country)
+
+    return news_object
+
 def process_results(news_list):
     '''
     Function  that processes the news result and transform them to a list of Objects
