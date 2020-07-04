@@ -1,16 +1,9 @@
+{% extends 'base.html' %}
 {% import 'macros.html' as macro %}
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to Wire Online News Service </title>
-        {% endif %}
-    </head>
-    <body>
+ <!-- Block content -->
+
+        {% block content %}
         <!-- General News-->
         <h3> World General news summary</h3>
         <ul>
@@ -28,8 +21,7 @@
         <ul>
             {{ macro.displayNews(technology)}}
         </ul>
-    </body>
-</html>
-
+    
+        {% endblock %}
 
 
