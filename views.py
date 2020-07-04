@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from app.request import get_news
+from app.request import get_news, get_news_item
 
 #Views
 @app.route('/')
@@ -24,4 +24,8 @@ def news(news_id):
     '''
     Views news function that returns news from a particular source
     '''
-    return render_template('news.html',id = news_id)
+    news_item = get_news_item(id)
+    title = f'{news_item.id}'
+
+    return render_template('news.html', title = title, news_item = news_item)
+    

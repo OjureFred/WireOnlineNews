@@ -43,13 +43,13 @@ def get_news_item(id):
         if news_details_response:
             id = news_details_response.get('id')
             name = news_details_response.get('name')
-            desription = news_details_response.get('description')
+            description = news_details_response.get('description')
             url = news_details_response.get('url')
             category = news_details_response.get('category')
             language = news_details_response.get('language')
             country = news_details_response.get('country')
 
-            news_object = Movie(id,name,description,url,category,language, country)
+            news_object = News(id,name,description,url,category,language, country)
 
     return news_object
 

@@ -1,1 +1,23 @@
-<h1> Hello news!!! {{ id }}</h1>
+{% extends 'base.html'%}
+<!-- Content block -->
+{% block content %}
+<div class="container">
+
+    <!-- Poster background -->
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath" style="background: url({{news_item.id}}) no-repeat center center">
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 movie-details">
+            <h3>{{ news_item.name }}</h3>
+
+            <p class="name"> {{ news_item.name }}</p>
+            <p class="language"> <b> {{ news_item.url }}</b> - <i>{{ news_item.language}} language </i> </p>
+            <p class="country"><b>{{news_item.country}}</b></p>
+
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}
