@@ -1,7 +1,7 @@
 {% macro displayNews(news_list) %}
 
     {% for news in news_list %}
-    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 news-card">
         <img src="{{ news.name }}" alt="{{ news.id }} News" class="img-responsive">
         <li class="text-center">
             <a href="/news/{{news.id}}">
