@@ -14,7 +14,6 @@ def index():
     business_online_news = get_news("business")
     technology_online_news = get_news("technology")
 
-    print(general_online_news)
     title = "Welcome to Wire Online News Service"
 
     search_news = request.args.get('news_query')
