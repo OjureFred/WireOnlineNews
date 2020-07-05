@@ -11,24 +11,25 @@
  <!-- Block content -->
 
         {% block content %}
+        <div class="container">
         <!-- General News-->
-        <h3> World General news summary</h3>
+        <h3><span class="blinking"> World General news summary</span></h3>
         <ul>
             {{ macro.displayNews(general)}}
         </ul>
        
         <!-- Business News-->
-        <h3>World Business news summary</h3>
+        <h3><span class="blinking"> World Business news summary</span></h3>
         <ul>
             {{ macro.displayNews(business)}}
         </ul>
 
         <!-- Technology-->
-        <h3>World Technology news Summary</h3>
+        <h3><span class="blinking">World Technology news Summary</span></h3>
         <ul>
             {{ macro.displayNews(technology)}}
         </ul>
-    
+        </div>
         {% endblock %}
 
 

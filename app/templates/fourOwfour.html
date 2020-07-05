@@ -1,5 +1,19 @@
 {% extends 'base.html'%}
 
-{% block content %}
-    <h1>OHHH NO!!!!! we can't find that page</h1>
+<!-- Styles block -->
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/fourOwfour.css')}}">
 {% endblock %}
+
+{% block content %}
+<div class="container">
+<br>
+    <h1><span class="blinking">OHHH Sorry!!!!! we can't find that page. <strong>Please checkout your url and try again!!!</strong></span></h1>
+    <img src="../static/images/chain-clipart-broken-chain-17.jpg" >
+
+</div>    
+{% endblock %}
+
+

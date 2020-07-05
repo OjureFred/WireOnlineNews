@@ -52,6 +52,21 @@ def get_news_item(id):
             news_object = News(id,name,description,url,category,language, country)
 
     return news_object
+    
+def search_news(keyword):
+    search_news_url = 'https://newsapi.org/v2/everything?q={}&apiKey=0f91a1188bde4ec2a617cbda88fc63d1'.format(keyword)
+    with urllib.request.urlopen(search_news_url) as url:
+        search_news_data = url.read()
+        search_news_response = json.loads(search_news_data)
+
+        search_movie_results = None
+
+        if search_news_response['sources']:
+            search_news_list = search_news_response['sources']
+            search_news_results = process_results(search_news_list)
+
+
+    return search_news_results
 
 def process_results(news_list):
     '''
@@ -77,3 +92,5 @@ def process_results(news_list):
         news_results.append(news_object)
 
     return news_results
+
+
