@@ -6,7 +6,7 @@
 
         <div class="row">
 
-            <h3> Found {{ news| count }} matches </h3>
+            <h3> Found {{ news| count }} matches for {{ keyword }}</h3>
             <hr>
             <ul>
                 {{ macro.displayNews(news)}}

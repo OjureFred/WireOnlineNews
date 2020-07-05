@@ -20,7 +20,7 @@ def index():
     search_news = request.args.get('news_query')
 
     if search_news:
-        return redirect(url_for('search', news = search_news))
+        return redirect(url_for('search', keyword = search_news))
     else:
         return render_template('index.html', title = title, general= general_online_news, business = business_online_news, technology = technology_online_news)
 
@@ -38,11 +38,13 @@ def news(news_id):
 @app.route('/search/<keyword>')
 def search(keyword):
     '''
-    View function to display the search results
+    View function to display news search results given a keyword
     '''
     news_keyword = keyword.split(" ")
     keyword_name_format = "+".join(news_keyword)
     searched_news = search_news(keyword_name_format)
+    
     title = f'search results for {keyword}'
-    return render_template('search.html', news = searched_news)
+
+    return render_template('search.html', keyword = keyword, news = searched_news)
     

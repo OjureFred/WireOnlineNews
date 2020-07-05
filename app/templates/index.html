@@ -12,28 +12,38 @@
 
         {% block content %}
         <div class="container">
+
             <form>
                 <input type="text" name="news_query" placeholder="Search for all news containing keyword" class="form-control">
                 <input type="submit"  value="Submit" class="btn btn-default">
             </form>
+
         <div class="container">
+            <div class="row">
         <!-- General News-->
+        <div class="column">
         <h3><span class="blinking"> World General news summary</span></h3>
         <ul>
             {{ macro.displayNews(general)}}
         </ul>
-       
+       </div>
+
         <!-- Business News-->
+       <div class="column">
         <h3><span class="blinking"> World Business news summary</span></h3>
         <ul>
             {{ macro.displayNews(business)}}
         </ul>
+        </div>
 
         <!-- Technology-->
+        <div class="column">
         <h3><span class="blinking">World Technology news Summary</span></h3>
         <ul>
             {{ macro.displayNews(technology)}}
         </ul>
+        </div>
+        </div>
         </div>
         {% endblock %}
 

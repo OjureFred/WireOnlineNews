@@ -9,7 +9,9 @@ News = news.News
 
 # Getting the movie base url
 #base_url = app.config["MOVIE_API_BASE_URL"]
-base_url = 'https://newsapi.org/v2/sources?apiKey=0f91a1188bde4ec2a617cbda88fc63d1'
+#'https://newsapi.org/v2/sources?apiKey=0f91a1188bde4ec2a617cbda88fc63d1'
+
+base_url = 'https://newsapi.org/v2/sources?category={}&apiKey=0f91a1188bde4ec2a617cbda88fc63d1'
 
 def get_news(category):
     '''
@@ -52,17 +54,23 @@ def get_news_item(id):
             news_object = News(id,name,description,url,category,language, country)
 
     return news_object
-    
+
 def search_news(keyword):
+    '''
+    Function to retrieve news articles containing a given keyword
+    '''
+    print("****This is the Keyword****" + keyword)
     search_news_url = 'https://newsapi.org/v2/everything?q={}&apiKey=0f91a1188bde4ec2a617cbda88fc63d1'.format(keyword)
+    print(search_news_url)
+   
     with urllib.request.urlopen(search_news_url) as url:
         search_news_data = url.read()
         search_news_response = json.loads(search_news_data)
 
-        search_movie_results = None
+        search_news_results = None
 
-        if search_news_response['sources']:
-            search_news_list = search_news_response['sources']
+        if search_news_response['articles']:
+            search_news_list = search_news_response['articles']
             search_news_results = process_results(search_news_list)
 
 
