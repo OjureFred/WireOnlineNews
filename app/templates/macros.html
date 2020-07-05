@@ -2,12 +2,17 @@
 
     {% for news in news_list %}
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 news-card">
-        <img src="{{ news.id }}" alt="{{ news.id }} News" class="img-responsive">
-        <li class="text-center">
-            <a href="/news/{{news.id}}">
-            {{ news.description}}</a></li>
-
-            </div>
+    <div class="card border-primary" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{news.name}}</h5>
+          <p class="card-text">{{news.description}}</p>
+          <p class="card-text">Category: {{news.category}}</p>
+          <p class="card-text">Language: {{news.language}}</p>
+          <p class="card-text">Country: {{news.country}}</p>
+          <a href="{{news.url}}" class="btn btn-primary">Read</a>
+        </div>
+      </div>
+      </div>
     {% endfor %}
 
 {% endmacro %}

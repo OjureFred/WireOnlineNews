@@ -12,6 +12,7 @@ News = news.News
 #'https://newsapi.org/v2/sources?apiKey=0f91a1188bde4ec2a617cbda88fc63d1'
 
 base_url = 'https://newsapi.org/v2/sources?category={}&apiKey=0f91a1188bde4ec2a617cbda88fc63d1'
+base_url2 = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey=0f91a1188bde4ec2a617cbda88fc63d1'
 
 def get_news(category):
     '''
@@ -31,11 +32,14 @@ def get_news(category):
 
     return news_results
 
-def get_news_item(id):
+def get_news_item(sources):
     '''
     Funtion to retrieve a single news item
     '''
-    get_news_details_url = base_url.format(id)
+    new_s = str(sources)
+    new_sources = new_s.split(" ")
+    v_sources = "+".join(new_sources)
+    get_news_details_url = base_url2.format(v_sources)
 
     with urllib.request.urlopen(get_news_details_url) as url:
         news_details_data = url.read()
@@ -59,7 +63,7 @@ def search_news(keyword):
     '''
     Function to retrieve news articles containing a given keyword
     '''
-    print("****This is the Keyword****" + keyword)
+    
     search_news_url = 'https://newsapi.org/v2/everything?q={}&apiKey=0f91a1188bde4ec2a617cbda88fc63d1'.format(keyword)
     print(search_news_url)
    
