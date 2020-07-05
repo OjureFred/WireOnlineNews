@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request, redirect, url_for
 from app import app
 from app.request import get_news, get_news_item, search_news
 
@@ -16,7 +16,13 @@ def index():
 
     print(general_online_news)
     title = "Welcome to Wire Online News Service"
-    return render_template('index.html', title = title, general= general_online_news, business = business_online_news, technology = technology_online_news)
+
+    search_news = request.args.get('news_query')
+
+    if search_news:
+        return redirect(url_for('search', news=search_news))
+    else:
+        return render_template('index.html', title = title, general= general_online_news, business = business_online_news, technology = technology_online_news)
 
 
 @app.route('/news/<news_id>')
