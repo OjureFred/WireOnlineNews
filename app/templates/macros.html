@@ -1,20 +1,18 @@
 {% macro displayNews(news_list) %}
-<div class="row">
- {% for news in news_list %}
-     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 news-card"> 
-    <div class="card border-primary bg-info h-100" style="width: 18rem;">
+
+    {% for news in news_list %}
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 news-card">
+    <div class="card border-primary" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">{{news.name}}</h5>
           <p class="card-text">{{news.description}}</p>
           <p class="card-text">Category: {{news.category}}</p>
           <p class="card-text">Language: {{news.language}}</p>
           <p class="card-text">Country: {{news.country}}</p>
-          <a href="{{news.url}}" class="btn btn-primary" target="_blank">Read</a>
+          <a href="{{news.url}}" class="btn btn-primary">Read</a>
         </div>
       </div>
       </div>
-     
     {% endfor %}
-    
-    </div>
+
 {% endmacro %}
