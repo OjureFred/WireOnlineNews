@@ -4,7 +4,6 @@ from .models import news
 
 News = news.News
 
-#
 # Getting api key
 #api_key = app.config['MOVIE_API_KEY']
 
